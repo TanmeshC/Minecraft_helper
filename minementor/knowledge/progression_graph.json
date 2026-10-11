@@ -1,0 +1,273 @@
+{
+  "nodes": {
+    "punch_wood": {
+      "name": "Punch Wood",
+      "tier": 0,
+      "category": "gathering",
+      "prerequisites": [],
+      "required_items": {},
+      "rewards": [
+        "oak_log",
+        "birch_log",
+        "spruce_log"
+      ],
+      "description": "Gather wood logs by punching tree trunks."
+    },
+    "crafting_table": {
+      "name": "Make Crafting Table",
+      "tier": 0,
+      "category": "crafting",
+      "prerequisites": [
+        "punch_wood"
+      ],
+      "required_items": {
+        "wood_planks": 4
+      },
+      "rewards": [
+        "crafting_table"
+      ],
+      "description": "Craft a 3x3 crafting table using four wooden planks."
+    },
+    "wooden_pickaxe": {
+      "name": "Craft Wooden Pickaxe",
+      "tier": 0,
+      "category": "crafting",
+      "prerequisites": [
+        "crafting_table"
+      ],
+      "required_items": {
+        "wood_planks": 3,
+        "stick": 2
+      },
+      "rewards": [
+        "wooden_pickaxe"
+      ],
+      "description": "Craft a wooden pickaxe to begin mining stone."
+    },
+    "stone_age": {
+      "name": "Mine Cobblestone",
+      "tier": 1,
+      "category": "mining",
+      "prerequisites": [
+        "wooden_pickaxe"
+      ],
+      "required_items": {
+        "wooden_pickaxe": 1
+      },
+      "rewards": [
+        "cobblestone"
+      ],
+      "description": "Mine cobblestone with a wooden pickaxe."
+    },
+    "stone_tools_and_furnace": {
+      "name": "Craft Stone Tools & Furnace",
+      "tier": 1,
+      "category": "crafting",
+      "prerequisites": [
+        "stone_age"
+      ],
+      "required_items": {
+        "cobblestone": 11,
+        "stick": 4
+      },
+      "rewards": [
+        "stone_pickaxe",
+        "stone_sword",
+        "furnace"
+      ],
+      "description": "Upgrade to stone equipment and build a furnace for smelting."
+    },
+    "iron_age": {
+      "name": "Mine & Smelt Iron",
+      "tier": 2,
+      "category": "mining",
+      "prerequisites": [
+        "stone_tools_and_furnace"
+      ],
+      "required_items": {
+        "stone_pickaxe": 1,
+        "furnace": 1,
+        "fuel": 1
+      },
+      "rewards": [
+        "iron_ingot"
+      ],
+      "description": "Mine raw iron from caves or mountains and smelt it in a furnace."
+    },
+    "iron_gear_and_shield": {
+      "name": "Craft Iron Armor, Pickaxe & Shield",
+      "tier": 2,
+      "category": "crafting",
+      "prerequisites": [
+        "iron_age"
+      ],
+      "required_items": {
+        "iron_ingot": 28,
+        "wood_planks": 6
+      },
+      "rewards": [
+        "iron_helmet",
+        "iron_chestplate",
+        "iron_leggings",
+        "iron_boots",
+        "iron_pickaxe",
+        "shield",
+        "water_bucket"
+      ],
+      "description": "Equip full iron armor, craft an iron pickaxe, shield, and water bucket."
+    },
+    "diamonds": {
+      "name": "Mine Diamonds",
+      "tier": 3,
+      "category": "mining",
+      "prerequisites": [
+        "iron_gear_and_shield"
+      ],
+      "required_items": {
+        "iron_pickaxe": 1
+      },
+      "rewards": [
+        "diamond"
+      ],
+      "description": "Mine deep underground (Y=-58) with an iron pickaxe to uncover diamonds."
+    },
+    "diamond_pickaxe": {
+      "name": "Craft Diamond Pickaxe",
+      "tier": 3,
+      "category": "crafting",
+      "prerequisites": [
+        "diamonds"
+      ],
+      "required_items": {
+        "diamond": 3,
+        "stick": 2
+      },
+      "rewards": [
+        "diamond_pickaxe"
+      ],
+      "description": "Craft a diamond pickaxe, the only tool capable of harvesting obsidian."
+    },
+    "obsidian_and_nether_portal": {
+      "name": "Harvest Obsidian & Light Nether Portal",
+      "tier": 4,
+      "category": "exploration",
+      "prerequisites": [
+        "diamond_pickaxe"
+      ],
+      "required_items": {
+        "diamond_pickaxe": 1,
+        "flint_and_steel": 1
+      },
+      "rewards": [
+        "obsidian",
+        "nether_portal"
+      ],
+      "description": "Mine 10-14 obsidian blocks and build a 4x5 vertical portal frame, then ignite with flint and steel."
+    },
+    "enchanting_setup": {
+      "name": "Build Enchanting Table & Bookshelves",
+      "tier": 4,
+      "category": "crafting",
+      "prerequisites": [
+        "diamond_pickaxe"
+      ],
+      "required_items": {
+        "diamond": 2,
+        "obsidian": 4,
+        "book": 1
+      },
+      "rewards": [
+        "enchanting_table"
+      ],
+      "description": "Craft an enchanting table and surround it with 15 bookshelves for level 30 enchantments."
+    },
+    "nether_fortress": {
+      "name": "Explore Nether Fortress & Gather Blaze Rods",
+      "tier": 5,
+      "category": "combat",
+      "prerequisites": [
+        "obsidian_and_nether_portal"
+      ],
+      "required_items": {
+        "nether_portal": 1,
+        "gold_armor_piece": 1
+      },
+      "rewards": [
+        "blaze_rod",
+        "nether_wart"
+      ],
+      "description": "Navigate the Nether to find a Fortress, defeat Blazes for rods, and collect nether wart."
+    },
+    "eyes_of_ender": {
+      "name": "Brewing & Craft Eyes of Ender",
+      "tier": 5,
+      "category": "crafting",
+      "prerequisites": [
+        "nether_fortress"
+      ],
+      "required_items": {
+        "blaze_rod": 1,
+        "ender_pearl": 1
+      },
+      "rewards": [
+        "blaze_powder",
+        "brewing_stand",
+        "eye_of_ender"
+      ],
+      "description": "Craft blaze powder and combine with ender pearls to produce Eyes of Ender."
+    },
+    "stronghold": {
+      "name": "Locate & Activate Stronghold End Portal",
+      "tier": 6,
+      "category": "exploration",
+      "prerequisites": [
+        "eyes_of_ender"
+      ],
+      "required_items": {
+        "eye_of_ender": 12
+      },
+      "rewards": [
+        "end_portal_activated"
+      ],
+      "description": "Throw Eyes of Ender to track down the Stronghold portal room and fill empty frame sockets."
+    },
+    "ender_dragon": {
+      "name": "Defeat the Ender Dragon",
+      "tier": 7,
+      "category": "combat",
+      "prerequisites": [
+        "stronghold"
+      ],
+      "required_items": {
+        "bow": 1,
+        "arrows": 64,
+        "water_bucket": 1,
+        "solid_blocks": 64
+      },
+      "rewards": [
+        "dragon_egg",
+        "dragon_breath",
+        "end_gateway"
+      ],
+      "description": "Destroy the End Crystals on obsidian towers, slay the Ender Dragon, and unlock the End Gateway."
+    },
+    "end_cities_and_elytra": {
+      "name": "Loot End Cities & Obtain Elytra",
+      "tier": 8,
+      "category": "exploration",
+      "prerequisites": [
+        "ender_dragon"
+      ],
+      "required_items": {
+        "ender_pearl": 16,
+        "solid_blocks": 128
+      },
+      "rewards": [
+        "elytra",
+        "shulker_shell",
+        "shulker_box"
+      ],
+      "description": "Explore outer End islands, loot End Cities, defeat Shulkers for boxes, and claim the Elytra from an End Ship."
+    }
+  }
+}
