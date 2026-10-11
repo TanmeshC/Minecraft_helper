@@ -1,0 +1,76 @@
+# MineMentor Central Configuration
+# Configurable for local-first, free-tier, and optional API integrations
+
+system:
+  app_name: "MineMentor"
+  version: "0.1.0"
+  environment: "local"
+
+minecraft:
+  default_edition: "Java"            # "Java" or "Bedrock"
+  default_version: "1.20.4"
+  strict_version_matching: true
+  ask_version_when_ambiguous: true
+
+llm:
+  provider: "mock_or_local"          # Options: "mock_or_local", "gemini", "openai", "anthropic", "huggingface"
+  model: "local-rule-grounded"       # e.g., "gemini-1.5-flash", "gpt-4o-mini", "mistral-7b"
+  temperature: 0.2
+  max_tokens: 512
+  stream: false
+
+embeddings:
+  provider: "sentence_transformers"  # Options: "sentence_transformers", "tfidf", "huggingface"
+  model: "all-MiniLM-L6-v2"
+  dimension: 384
+  batch_size: 64
+
+retrieval:
+  top_k: 5
+  hybrid_search: true
+  dense_weight: 0.6
+  sparse_weight: 0.4
+  vector_store: "faiss"              # Options: "faiss", "in_memory", "chroma"
+  index_path: "data/processed/faiss_index"
+
+reranker:
+  enabled: true
+  provider: "cross_encoder"
+  model: "cross-encoder/ms-marco-MiniLM-L-6-v2"
+  top_n: 3
+
+classifiers:
+  intent:
+    model_type: "tfidf_logreg"       # Options: "tfidf_logreg", "minilm"
+    model_path: "minementor/ml/classification/intent_model.joblib"
+  difficulty:
+    model_type: "tfidf_logreg"
+    model_path: "minementor/ml/classification/difficulty_model.joblib"
+
+player_model:
+  enabled: true
+  persistent: true
+  default_state:
+    edition: "Java"
+    version: "1.20"
+    dimension: "overworld"
+    day: 1
+    health: 20
+    food: 20
+    inventory: []
+    equipment:
+      helmet: null
+      chestplate: null
+      leggings: null
+      boots: null
+      main_hand: null
+      off_hand: null
+    progression_stage: "early_game"
+
+recommendation:
+  max_suggested_goals: 3
+  progression_graph_path: "minementor/knowledge/progression_graph.json"
+
+deterministic_engine:
+  recipes_path: "data/cleaned/recipes.json"
+  strict_math: true
